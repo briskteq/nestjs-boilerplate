@@ -1,4 +1,5 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import { TABLES } from '../utilities/constants';
 
 export class CreateUsersTable1629092240813 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -47,13 +48,13 @@ export class CreateUsersTable1629092240813 implements MigrationInterface {
             type: 'timestamp',
           },
         ],
-        name: 'users',
+        name: TABLES.USERS_TABLE,
       }),
       false,
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('users');
+    await queryRunner.dropTable(TABLES.USERS_TABLE);
   }
 }

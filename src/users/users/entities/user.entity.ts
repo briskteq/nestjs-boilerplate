@@ -5,8 +5,9 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { TABLES } from '../../utilities/constants';
 
-@Entity('users')
+@Entity(TABLES.USERS_TABLE)
 export class User {
   @PrimaryColumn('uuid')
   id: string;

@@ -1,4 +1,5 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsEnum, IsNotEmpty } from 'class-validator';
+import { STATUS } from '../../../utilities/constants';
 
 export class CreateUserDto {
   @IsNotEmpty()
@@ -12,6 +13,7 @@ export class CreateUserDto {
 
   userData: string;
 
+  @IsEnum(STATUS)
   @IsNotEmpty()
   userStatus: number;
 }
